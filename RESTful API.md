@@ -76,8 +76,9 @@
                             content     : 内容
                             date        : 时间
                             avatar      : 头像       
-                        }],
+                        },
                        ...
+                       ]
                     }
             friends : 好友列表
             {
@@ -85,8 +86,9 @@
                     nickname    : 昵称
                     account     : 用户账户名
                     online      : true/false
-                }],
+                },
                 ...
+                ]
             }
         }
         ```
@@ -129,13 +131,14 @@
                 [{
                     type    :  text,
                     content :  内容
-                }],
-                [{
+                },
+                {
                     type : img,
                     url  : 图片地址
-                }],
+                },
                 
                ...
+               ]
             }
             avatar   : URL 头像 
             isSelf   : true/false
