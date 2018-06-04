@@ -76,7 +76,7 @@
                             account     : 用户账户名
                             content     : 内容
                             date        : 时间
-                            url         : 头像       
+                            avatar      : 头像       
                         }],
                        ...
                     }
