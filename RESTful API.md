@@ -59,7 +59,7 @@
     6. 成功后跳转回公共聊天页面
 
 4. 获取用户信息
-    1. url:      /userInfo?account=用户账户名
+    1. url:      /userInfo
     2. type:     /GET
     3. dataType:    json
     4. return:
@@ -69,7 +69,6 @@
             sex      : t(男)，f(女)
             intro    : 介绍
             remark   : 好友印象
-                    {
                         [{
                             nickname    : 昵称
                             account     : 用户账户名
@@ -79,17 +78,16 @@
                         },
                        ...
                        ]
-                    }
+                    
             friends : 好友列表
-            {
-                [{
+                 [{
                     nickname    : 昵称
                     account     : 用户账户名
                     online      : true/false
                 },
                 ...
                 ]
-            }
+            
         }
         ```
 5. 用户信息更新
@@ -127,7 +125,7 @@
             type     : "message"
             account  : 用户账户名
             nickname : 昵称
-            content  : {
+            content  : 
                 [{
                     type    :  text,
                     content :  内容
@@ -139,7 +137,7 @@
                 
                ...
                ]
-            }
+            
             avatar   : URL 头像 
             isSelf   : true/false
             date     : 发送时间
