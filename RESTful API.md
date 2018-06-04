@@ -12,7 +12,7 @@
                      0 (失败) 
             error  : "...." 
             nickname: 用户的昵称
-            token  : 用来连接websocket的用户认证口令
+
         }
         ```
 2. 用户登入
@@ -35,7 +35,7 @@
         }
         ```
     4. 关闭当前的websocket连接
-    5. 以登入用户的身份再次建立新的websocket连接
+    5. 再次建立新的websocket连接
     
 3. 用户注册
     1. url:         /signup
@@ -171,3 +171,5 @@
             }
         ```
     ```
+
+**使用fetch进行GET、POST操作时，记得带上本地的SESSION ID**
