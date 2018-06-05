@@ -108,7 +108,18 @@
             }
         ```
     5. 若某项没有修改则不添加该项
-
+6. 申请/删除 好友
+    1. url : /friends?action=(add/delete)?account=账户名
+    2. type : GET
+    3. dataType : json
+    4. return:
+    ```
+        {
+            status: 1 (成功)
+                    0
+            error : ...     
+        }   
+    ```
 ## 聊天室信息
 
 1.  websocket连接
