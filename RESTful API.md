@@ -159,7 +159,16 @@
                 ]
         }
     ```
-5. 公共聊天室历史消息获取(HTTP)
+
+5. 在线用户登出消息提醒
+    ```
+    {
+        type        : "signOutRemind"
+        account     : 用户账户名 
+    }
+
+    ```
+6. 公共聊天室历史消息获取(HTTP)
     ```
         1. url:     /getHistory?type=first (二次获取type=second,一次加载20条)
         2. type:    /EGT
