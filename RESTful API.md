@@ -68,6 +68,7 @@
             nickname : 昵称
             sex      : t(男)，f(女)
             intro    : 介绍
+            avatar   ： 头像
             remark   : 好友印象
                         [{
                             nickname    : 昵称
