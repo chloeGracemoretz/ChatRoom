@@ -125,8 +125,8 @@
 ## 聊天室信息
 
 1.  websocket连接
-    1. url : ws://localhost:8080/websocket
-  
+    1. url : ws://localhost:8080/ChatChannel
+
 2.  消息发送
     1. 方法：onmessage
     2. 用一个ID标记信息的首尾（字符串类型）
@@ -194,12 +194,30 @@
             }
         ```
     ```
-7. 好友申请
+
+8. 离线消息提醒
 ```$xslt
     {
-        type        : "friendRequest"
-        account     : 申请人账户名 
+        type        : "messageRemind"
+        account     : 发送者账户名
+        date        : 发送时间
     }
 ```
+
+## 聊天室其他请求
+
+1. websocket 连接
+    1. url： ws://localhost:8080/MultiRequest
+
+2. 申请/回应申请/删除 好友
+   ```$xslt
+       {
+           type        : "friendRequest"
+           action      : add / delete 
+           account     : 申请人账户名 
+           feedback    : accept / decline
+       }
+   ``` 
+3.
 
 **使用fetch进行GET、POST操作时，记得带上本地的SESSION ID**
