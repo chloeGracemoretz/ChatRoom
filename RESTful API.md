@@ -214,7 +214,7 @@
        {
            type        : "friendRequest"
            action      : add / delete 
-           account     : 申请人账户名 
+           account     : 对方账户名 
            feedback    : accept / decline
        }
    ``` 
