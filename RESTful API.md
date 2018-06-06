@@ -172,10 +172,10 @@
         }
     ```
 
-5. 在线用户登出消息提醒
+5. 在线用户登入/出消息提醒
     ```
     {
-        type        : "signOutRemind"
+        type        : "signInRemind" /"signOutRemind"
         account     : 用户账户名 
     }
 
