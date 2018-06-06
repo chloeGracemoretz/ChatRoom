@@ -108,8 +108,8 @@
             }
         ```
     5. 若某项没有修改则不添加该项
-6. 申请/删除 好友
-    1. url : /friends?action=(add/delete)?account=账户名
+6. 申请/回应申请/删除 好友
+    1. url : /friends?action=(add/delete)&account=对方账户名&feedback=(accept/decline)
     2. type : GET
     3. dataType : json
     4. return:
@@ -117,9 +117,11 @@
         {
             status: 1 (成功)
                     0
+            message : ... 
             error : ...     
         }   
     ```
+   
 ## 聊天室信息
 
 1.  websocket连接
@@ -192,5 +194,12 @@
             }
         ```
     ```
+7. 好友申请
+```$xslt
+    {
+        type        : "friendRequest"
+        account     : 申请人账户名 
+    }
+```
 
 **使用fetch进行GET、POST操作时，记得带上本地的SESSION ID**
