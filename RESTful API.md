@@ -201,16 +201,16 @@
     1. url： ws://localhost:8080/MultiRequest
 
 2. 申请/回应申请/删除 好友
-   ```$xslt
+   ```JavaScript
        {
            type        : "friendRequest"
-           action      : add / delete 
+           action      : add / delete
            account     : 对方账户名 
            feedback    : accept / decline
        }
    ``` 
 3.离线消息提醒
-  ```$xslt
+  ```JavaScript
       {
           type        : "messageRemind"
           account     : 发送者账户名
