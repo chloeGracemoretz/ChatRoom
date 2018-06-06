@@ -195,15 +195,6 @@
         ```
     ```
 
-8. 离线消息提醒
-```$xslt
-    {
-        type        : "messageRemind"
-        account     : 发送者账户名
-        date        : 发送时间
-    }
-```
-
 ## 聊天室其他请求
 
 1. websocket 连接
@@ -218,6 +209,13 @@
            feedback    : accept / decline
        }
    ``` 
-3.
+3.离线消息提醒
+  ```$xslt
+      {
+          type        : "messageRemind"
+          account     : 发送者账户名
+          date        : 发送时间
+      }
+  ```
 
 **使用fetch进行GET、POST操作时，记得带上本地的SESSION ID**
