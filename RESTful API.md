@@ -125,7 +125,8 @@
 ## 聊天室信息
 
 1.  websocket连接
-    1. url : ws://localhost:8080/ChatChannel
+    1. url : ws://localhost:8080/PublicChannel(公共聊天室)
+    2. url : ws://localhost:8080/PrivateChannel/ + account 对方账户名称
 
 2.  消息发送
     1. 方法：onmessage
@@ -184,7 +185,7 @@
     ```
 6. 公共聊天室历史消息获取(HTTP)
     ```
-        1. url:     /getHistory?type=first (二次获取type=second,一次加载20条)
+        1. url:     /getHistory?type=first (二次获取type=second,一次加载20条)&channelType=(public如果是该项不需要加account/private)&account=账户名称
         2. type:    /EGT
         3. dataType:  json
         4. return
@@ -201,21 +202,31 @@
     1. url： ws://localhost:8080/MultiRequest
 
 2. 申请/回应申请/删除 好友
-   ```JavaScript
+   ```
        {
            type        : "friendRequest"
-           action      : add / delete
+           action      : add / delete 
            account     : 对方账户名 
            feedback    : accept / decline
        }
    ``` 
-3.离线消息提醒
-  ```JavaScript
+3. 离线消息提醒
+  ```
       {
           type        : "messageRemind"
           account     : 发送者账户名
           date        : 发送时间
       }
   ```
+4. 请求响应
+```$xslt
+    {
+         type        : feedback
+         status      : 1（成功）
+                       0
+         message     : ...
+         error       : ...
+    }
+```
 
 **使用fetch进行GET、POST操作时，记得带上本地的SESSION ID**
