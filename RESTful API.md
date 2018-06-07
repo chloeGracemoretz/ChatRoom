@@ -125,14 +125,20 @@
 ## 聊天室信息
 
 1.  websocket连接
-    1. url : ws://localhost:8080/PublicChannel(公共聊天室)
-    2. url : ws://localhost:8080/PrivateChannel/ + account 对方账户名称
-
+    1. url : ws://localhost:8080/ChatChannel
+    
 2.  消息发送
     1. 方法：onmessage
     2. 用一个ID标记信息的首尾（字符串类型）
-    3. 文本信息字符串类型发送
-    4. 文件用blob传输，并且先发送一个类型为blob的数据流包含文件的扩展名
+    3. 发送类型为JSON的字符串 
+    ```
+    {
+        type : public / private
+        account : 账户名称(当type为private时，添加此项)
+     }
+    ```
+    4. 文本信息字符串类型发送
+    5. 文件用blob传输，并且先发送一个类型为blob的数据流包含文件的扩展名
     
 3.  新消息获取
     ```
@@ -189,11 +195,11 @@
         2. type:    /EGT
         3. dataType:  json
         4. return
-        ```
+        
             {
                 history:[ 内容同发送消息格式 ]
             }
-        ```
+                 
     ```
 
 ## 聊天室其他请求
@@ -209,17 +215,18 @@
            account     : 对方账户名 
            feedback    : accept / decline
        }
-   ``` 
+   ```
 3. 离线消息提醒
-  ```
-      {
+     ```
+       {
           type        : "messageRemind"
           account     : 发送者账户名
           date        : 发送时间
       }
-  ```
-4. 请求响应
-```$xslt
+     ```
+  
+4. 请求响应结果返回
+     ```
     {
          type        : feedback
          status      : 1（成功）
@@ -227,6 +234,6 @@
          message     : ...
          error       : ...
     }
-```
+     ```
 
 **使用fetch进行GET、POST操作时，记得带上本地的SESSION ID**
