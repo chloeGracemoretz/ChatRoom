@@ -236,8 +236,23 @@
          error       : ...
     }
      ```
+5. 消息盒子获取(HTTP)
+    ```
+        1. url      : /notifyBox?account=账户名
+        2. type     : GET
+        3. dataType : json
+        4. return   : [{
+                           "applicant"   : 发起者
+                           "recipient"   : 接收者
+                           "type"        : 请求类型(现在只有这一种friendRequest)
+                           "hasresponse" : t / f 是否回应该请求
+                           "feedback"    : accept / decline (仅当hasreponse为t时该项不为空)
+                           "date"        : 时间 
+                       }]
+    
+    ```
 
-5. 流程
+### 通知流程
     1. 有未读消息时给相应的用户设红点通知记号
     2. 当用户读取消息后设为已读
     3. 未处理的请求设为未响应
