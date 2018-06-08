@@ -108,17 +108,13 @@
             }
         ```
     5. 若某项没有修改则不添加该项
-6. 申请/回应申请/删除 好友
-    1. url : /friends?action=(add/delete)&account=对方账户名&feedback=(accept/decline)
-    2. type : GET
-    3. dataType : json
-    4. return:
+6. 申请/回应申请/删除 好友(WS)
     ```
         {
-            status: 1 (成功)
-                    0
-            message : ... 
-            error : ...     
+           type     :friend
+           action   :add/delete
+           feedback :accept/decline
+           account  :对方账户名
         }   
     ```
    
@@ -165,7 +161,7 @@
         }
     ```
 
-4. 在线用户列表获取(WS)
+4. 在线用户列表获取
     ```
         {
             type     : "userList"
@@ -191,17 +187,23 @@
     ```
 6. 公共聊天室历史消息获取(HTTP)
     ```
-        1. url:     /getHistory?type=first (二次获取type=second,一次加载20条)&channelType=(public如果是该项不需要加account/private)&account=账户名称
-        2. type:    /EGT
+        1. url:     /getHistory
+        2. type:    /POST
         3. dataType:  json
-        4. return
+        4. data:
+        {
+            type        : public / private
+            account     : 如果是private 这里发送账户名
+            method      : first / second 
+        }
+        5. return
         
             {
                 history:[ 内容同发送消息格式 ]
             }
                  
     ```
-
+    一次将返回20条历史记录
 ## 聊天室其他请求
 
 1. websocket 连接
@@ -219,9 +221,8 @@
 3. 离线消息提醒
      ```
        {
-          type        : "messageRemind"
+          type        : "msgRemind"
           account     : 发送者账户名
-          date        : 发送时间
       }
      ```
   
@@ -235,5 +236,11 @@
          error       : ...
     }
      ```
+
+5. 流程
+    1. 有未读消息时给相应的用户设红点通知记号
+    2. 当用户读取消息后设为已读
+    3. 未处理的请求设为未响应
+    4. 当用户查看消息盒子时可以查看所有通知及处理结果
 
 **使用fetch进行GET、POST操作时，记得带上本地的SESSION ID**
