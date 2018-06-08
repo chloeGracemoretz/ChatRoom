@@ -36,7 +36,12 @@
     4. 关闭当前的websocket连接
     5. 再次建立新的websocket连接
     
-3. 用户注册
+3. 用户登出
+    1. url :        /signout
+    2. tpye:        GET
+   
+       
+4. 用户注册
     1. url:         /signup
     2. type:        /POST
     3. dataType:    json
@@ -58,7 +63,7 @@
         ```
     6. 成功后跳转回公共聊天页面
 
-4. 获取用户信息
+5. 获取用户信息
     1. url:      /userInfo
     2. type:     /GET
     3. dataType:    json
@@ -91,7 +96,7 @@
             
         }
         ```
-5. 用户信息更新
+6. 用户信息更新
     1. url:     /userInfo
     2. type:    /POST
     3. dataType:  json
@@ -108,7 +113,7 @@
             }
         ```
     5. 若某项没有修改则不添加该项
-6. 申请/回应申请/删除 好友(WS)
+7. 申请/回应申请/删除 好友(WS)
     ```
         {
            type     :friend
@@ -186,7 +191,7 @@
     }
 
     ```
-6. 公共聊天室历史消息获取(HTTP)
+6. 聊天室历史消息获取(HTTP)
     ```
         1. url:     /getHistory
         2. type:    /POST
