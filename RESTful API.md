@@ -140,6 +140,7 @@
     ```
         {
             type     : "message"
+            msgType  :  private / public 
             account  : 用户账户名
             nickname : 昵称
             content  : 
