@@ -37,9 +37,10 @@
     5. 再次建立新的websocket连接
     
 3. 用户登出
+    ```
     1. url :        /signout
     2. tpye:        GET
-   
+   ```
        
 4. 用户注册
     1. url:         /signup
@@ -131,15 +132,8 @@
 2.  消息发送
     1. 方法：onmessage
     2. 用一个ID标记信息的首尾（字符串类型）
-    3. 发送类型为JSON的字符串 
-    ```
-    {
-        type : public / private
-        account : 账户名称(当type为private时，添加此项)
-     }
-    ```
-    4. 文本信息字符串类型发送
-    5. 文件用blob传输，并且先发送一个类型为blob的数据流包含文件的扩展名
+    3. 文本信息字符串类型发送
+    4. 文件用blob传输，并且先发送一个类型为blob的数据流包含文件的扩展名
     
 3.  新消息获取
     ```
@@ -215,7 +209,16 @@
 1. websocket 连接
     1. url： ws://localhost:8080/MultiRequest
 
-2. 申请/回应申请/删除 好友
+2. 请求建立会话
+    ```
+        {
+            type       : MsgSession
+            isPublic   : true / false
+            account    : 对方的账户名
+        }
+    ```
+
+3. 申请/回应申请/删除 好友
    ```
        {
            type        : "friendRequest"
@@ -224,7 +227,7 @@
            feedback    : accept / decline
        }
    ```
-3. 离线消息提醒
+4. 离线消息提醒
      ```
        {
           type        : "msgRemind"
@@ -232,7 +235,7 @@
       }
      ```
   
-4. 请求响应结果返回
+5. 请求响应结果返回
      ```
     {
          type        : feedback
@@ -242,7 +245,7 @@
          error       : ...
     }
      ```
-5. 消息盒子获取(HTTP)
+6. 消息盒子获取(HTTP)
     ```
         1. url      : /notifyBox?account=账户名
         2. type     : GET
@@ -265,3 +268,4 @@
     4. 当用户查看消息盒子时可以查看所有通知及处理结果
 
 **使用fetch进行GET、POST操作时，记得带上本地的SESSION ID**
+
