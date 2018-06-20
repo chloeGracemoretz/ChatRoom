@@ -204,6 +204,15 @@
                  
     ```
     一次将返回20条历史记录
+
+7. (离线)消息提醒
+     ```
+       {
+          type        : "msgRemind"
+          account     : 发送者账户名
+      }
+     ```
+
 ## 聊天室其他请求
 
 1. websocket 连接
@@ -227,15 +236,8 @@
            feedback    : accept / decline
        }
    ```
-4. 离线消息提醒
-     ```
-       {
-          type        : "msgRemind"
-          account     : 发送者账户名
-      }
-     ```
-  
-5. 请求响应结果返回
+
+4. 请求响应结果返回
      ```
     {
          type        : feedback
@@ -245,7 +247,7 @@
          error       : ...
     }
      ```
-6. 消息盒子获取(HTTP)
+5. 消息盒子获取(HTTP)
     ```
         1. url      : /notifyBox?account=账户名
         2. type     : GET
