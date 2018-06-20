@@ -202,8 +202,8 @@
      ```
        {
           type        : "msgRemind"
+          isPublic    : true / false
           account     : 发送者账户名
-          amount      : 新信息的条数
       }
      ```
 
